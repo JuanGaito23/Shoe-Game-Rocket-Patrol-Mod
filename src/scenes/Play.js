@@ -16,11 +16,11 @@ class Play extends Phaser.Scene {
         this.city = this.add.tileSprite(0, 0, 640, 480, 'city').setOrigin(0, 0);
         // neon blue UI background
         this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x93F9FF).setOrigin(0, 0);
-        // white borders
-        this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(0, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
+        // light gray borders
+        this.add.rectangle(0, 0, game.config.width, borderUISize, 0xDCDADA).setOrigin(0, 0);
+        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xDCDADA).setOrigin(0, 0);
+        this.add.rectangle(0, 0, borderUISize, game.config.height, 0xDCDADA).setOrigin(0, 0);
+        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xDCDADA).setOrigin(0, 0);
         // add shoe (p1)
         this.p1Shoe = new Shoe(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'shoe').setOrigin(0.5, 0);
         // add socks (x3)
