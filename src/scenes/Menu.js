@@ -27,7 +27,7 @@ class Menu extends Phaser.Scene {
       this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'SHOE PATROL', menuConfig).setOrigin(0.5);
       this.add.text(game.config.width/2, game.config.height/2, 'Use ← → arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
       menuConfig.backgroundColor = '#93F9FF';
-      menuConfig.color = '#6BB5FE';
+      menuConfig.color = '#F3B4B4';
       this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press ← for Novice or → for Expert', menuConfig).setOrigin(0.5);
 
        // define keys
