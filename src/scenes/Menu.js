@@ -4,7 +4,7 @@ class Menu extends Phaser.Scene {
     }
     preload() {
         // load audio
-        this.load.audio('sfx_select-v.3', './assets/blip_select-v.3.wav');
+        this.load.audio('sfx_select-v.2', './assets/blip_select-v.2.wav');
         this.load.audio('sfx_run-explode', './assets/run-explode.wav');
         this.load.audio('sfx_shoe', './assets/shoe_shot.wav');
       }
@@ -42,7 +42,7 @@ class Menu extends Phaser.Scene {
             sockSpeed: 3,
             gameTimer: 60000    
           }
-          this.sound.play('sfx_select-v.3');
+          this.sound.play('sfx_select-v.2');
           this.scene.start('playScene');    
         }
         if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
@@ -51,7 +51,7 @@ class Menu extends Phaser.Scene {
             sockSpeed: 4,
             gameTimer: 45000    
           }
-          this.sound.play('sfx_select-v.3');
+          this.sound.play('sfx_select-v.2');
           this.scene.start('playScene');    
         }
       }
