@@ -8,7 +8,7 @@ class Play extends Phaser.Scene {
         this.load.image('sock', './assets/sock.png');
         this.load.image('city', './assets/city.png');
         // load spritesheet
-        this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+        this.load.spritesheet('run-explosion', './assets/run-explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
       }
       
     create() {
@@ -35,7 +35,7 @@ class Play extends Phaser.Scene {
         // animation config
         this.anims.create({
             key: 'explode',
-            frames: this.anims.generateFrameNumbers('explosion', { start: 0, end: 9, first: 0}),
+            frames: this.anims.generateFrameNumbers('run-explosion', { start: 0, end: 9, first: 0}),
             frameRate: 30
         });
         // initialize score
@@ -112,13 +112,13 @@ class Play extends Phaser.Scene {
     sockExplode(sock) {
         // temporarily hide sock
         sock.alpha = 0;
-        // create explosion sprite at sock's position
-        let boom = this.add.sprite(sock.x, sock.y, 'explosion').setOrigin(0, 0);
+        // create run-explosion sprite at sock's position
+        let boom = this.add.sprite(sock.x, sock.y, 'run-explosion').setOrigin(0, 0);
         boom.anims.play('explode');             // play explode animation
         boom.on('animationcomplete', () => {    // callback after anim completes
           sock.reset();                         // reset sock position
           sock.alpha = 1;                       // make sock visible again
-          boom.destroy();                       // remove explosion sprite
+          boom.destroy();                       // remove run-explosion sprite
         });
         // score add and repaint
         this.p1Score += sock.points;
