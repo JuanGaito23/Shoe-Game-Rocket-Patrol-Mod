@@ -2,7 +2,7 @@
 class Shoe extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
       super(scene, x, y, texture, frame);
-      this.sfxRocket = scene.sound.add('sfx_shoe'); // add rocket sfx
+      this.sfxShoe = scene.sound.add('sfx_shoe'); // add shoe sfx
   
       // add object to existing scene
       scene.add.existing(this); //add to existing, displayList, updateList
@@ -22,7 +22,7 @@ class Shoe extends Phaser.GameObjects.Sprite {
         // fire button
         if (Phaser.Input.Keyboard.JustDown(keyF) && !this.isFiring) {
             this.isFiring = true;
-            this.sfxRocket.play();  // play sfx
+            this.sfxShoe.play();  // play sfx
         }
         //if fired, move up
         if(this.isFiring && this.y >= borderUISize * 3 + borderPadding) {
