@@ -109,7 +109,7 @@ class Play extends Phaser.Scene {
             return false;
         }
     }
-    shipExplode(sock) {
+    sockExplode(sock) {
         // temporarily hide sock
         sock.alpha = 0;
         // create explosion sprite at sock's position
