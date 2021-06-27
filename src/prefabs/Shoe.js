@@ -6,7 +6,7 @@ class Shoe extends Phaser.GameObjects.Sprite {
   
       // add object to existing scene
       scene.add.existing(this); //add to existing, displayList, updateList
-      this.isFiring = false; //track rocket's firing status
+      this.isFiring = false; //track shoe's firing status
       this.moveSpeed = 2; //pixels per frame
     }
 
@@ -34,7 +34,7 @@ class Shoe extends Phaser.GameObjects.Sprite {
         }
     }
 
-    //reset rocket to "ground"
+    //reset shoe to "ground"
     reset() {
         this.isFiring = false;
         this.y = game.config.height - borderUISize - borderPadding;
