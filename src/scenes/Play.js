@@ -36,15 +36,15 @@ class Play extends Phaser.Scene {
         this.anims.create({
             key: 'explode',
             frames: this.anims.generateFrameNumbers('run-explosion', { start: 0, end: 9, first: 0}),
-            frameRate: 30
+            frameRate: 20
         });
         // initialize score
         this.p1Score = 0;
         // display score
         let scoreConfig = {
-            fontFamily: 'Courier',
+            fontFamily: 'Impact',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
+            backgroundColor: '#F5BDBC',
             color: '#843605',
             align: 'right',
             padding: {
