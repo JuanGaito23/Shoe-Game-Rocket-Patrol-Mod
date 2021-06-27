@@ -13,3 +13,10 @@ let borderPadding = borderUISize / 3;
 
 // reserve keyboard variables
 let keyF, keyR, keyLEFT, keyRIGHT;
+
+/* Credit:
+Rocket Patrol Tutorial/Code Template: Nathan Altice
+Sound: JFXR by frozenfractal 
+Artwork created in: Aseprite
+Color picker help: MDN Web Docs (Color Picker Tool)
+*/
