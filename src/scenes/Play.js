@@ -45,7 +45,7 @@ class Play extends Phaser.Scene {
             fontFamily: 'Impact',
             fontSize: '28px',
             backgroundColor: '#F5BDBC',
-            color: '#000000',
+            color: '#9B9B9B',
             align: 'right',
             padding: {
                 top: 5,
