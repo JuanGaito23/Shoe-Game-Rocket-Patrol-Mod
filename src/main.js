@@ -14,6 +14,23 @@ let borderPadding = borderUISize / 3;
 // reserve keyboard variables
 let keyF, keyR, keyLEFT, keyRIGHT;
 
+/*
+Juan Gaito, Shoe Patrol, 6/28/21, 20 hours 
+*/
+
+/*
+Include a comment in your main file that includes your points breakdown (along with any necessary explanation)
+Redesign the game's artwork, UI, and sound to change its theme/aesthetic (to something other than sci-fi) (60):
+- artwork: new rocket, new explosion, new spaceships, and new background
+- UI: new font (Impact) and new colors for website, score, letters, etc.
+- Sound: new select, explosion, and shot sounds 
+
+Finishing the Tutorial: an automatic 20 points.
+
+Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (20)
+- Particle: gold explosion when shoe hits socks
+*/
+
 /* Credit:
 Rocket Patrol Tutorial/Code Template: Nathan Altice
 Sound: JFXR by frozenfractal 
