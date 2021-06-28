@@ -9,7 +9,10 @@ class Play extends Phaser.Scene {
         this.load.image('city', './assets/city.png');
         // load spritesheet
         this.load.spritesheet('run-explosion', './assets/run-explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+        //load particles
+        this.load.image('spark', './assets/navy.png');
       }
+      
       
     create() {
         // place tile sprite
@@ -38,6 +41,23 @@ class Play extends Phaser.Scene {
             frames: this.anims.generateFrameNumbers('run-explosion', { start: 0, end: 9, first: 0}),
             frameRate: 20
         });
+        // particles
+        //this.createParticles();
+
+        this.particles = this.add.particles('spark');
+            
+        let particleConfig = {
+            x: 400,
+            y: 300,
+            speed: 200,
+            lifespan: 500,
+            blendMode: 'ADD',
+            maxParticles: 50,
+            scale: {start: 1, end: 0},
+            on: false,
+        };
+
+        this.emitter = this.particles.createEmitter(particleConfig)
         // initialize score
         this.p1Score = 0;
         // display score
@@ -54,19 +74,20 @@ class Play extends Phaser.Scene {
             fixedWidth: 100
         }
         this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, 
-    this.p1Score, scoreConfig);
-    // GAME OVER flag
-    this.gameOver = false;
+        this.p1Score, scoreConfig);
+        // GAME OVER flag
+        this.gameOver = false;
 
-    // 60-second play clock
-    scoreConfig.fixedWidth = 0;
-    this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
-        this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
-        this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
-        this.gameOver = true;
-    }, null, this);
+        // 60-second play clock
+        scoreConfig.fixedWidth = 0;
+        this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
+            this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
+            this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
+            this.gameOver = true;
+        }, null, this);
 
     }
+
     update() {
         this.city.tilePositionX -= 4;
         // check key input for restart
@@ -114,6 +135,7 @@ class Play extends Phaser.Scene {
         sock.alpha = 0;
         // create run-explosion sprite at sock's position
         let boom = this.add.sprite(sock.x, sock.y, 'run-explosion').setOrigin(0, 0);
+        this.particles.emitParticlesAt(ship.x, ship.y, 50);
         boom.anims.play('explode');             // play explode animation
         boom.on('animationcomplete', () => {    // callback after anim completes
           sock.reset();                         // reset sock position
