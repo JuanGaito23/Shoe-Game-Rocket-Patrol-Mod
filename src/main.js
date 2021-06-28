@@ -19,4 +19,10 @@ Rocket Patrol Tutorial/Code Template: Nathan Altice
 Sound: JFXR by frozenfractal 
 Artwork created in: Aseprite
 Color picker help: MDN Web Docs (Color Picker Tool)
+In Collaboration with: jahunguy@ucsc.edu
+Particles based on example from:
+https://photonstorm.github.io/phaser3-docs/Phaser.Scale.html
+https://labs.phaser.io/edit.html?src=src/game%20objects/particle%20emitter/create%20emitter.js&v=3.55.2
+https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Particles.ParticleEmitter.html#scaleX__anchor
+https://www.youtube.com/watch?v=JSrafZXuehQ
 */
