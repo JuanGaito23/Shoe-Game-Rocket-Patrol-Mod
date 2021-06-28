@@ -135,8 +135,8 @@ class Play extends Phaser.Scene {
         sock.alpha = 0;
         // create run-explosion sprite at sock's position
         let boom = this.add.sprite(sock.x, sock.y, 'run-explosion').setOrigin(0, 0);
-        boom.anims.play('explode');             // play explode animation
         this.particles.emitParticleAt(sock.x, sock.y, 50);
+        boom.anims.play('explode');             // play explode animation
         boom.on('animationcomplete', () => {    // callback after anim completes
           sock.reset();                         // reset sock position
           sock.alpha = 1;                       // make sock visible again
