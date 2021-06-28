@@ -10,7 +10,7 @@ class Play extends Phaser.Scene {
         // load spritesheet
         this.load.spritesheet('run-explosion', './assets/run-explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
         //load particles
-        this.load.image('spark', './assets/navy.png');
+        this.load.image('spark', './assets/gold.png');
       }
       
       
@@ -135,8 +135,8 @@ class Play extends Phaser.Scene {
         sock.alpha = 0;
         // create run-explosion sprite at sock's position
         let boom = this.add.sprite(sock.x, sock.y, 'run-explosion').setOrigin(0, 0);
-        this.particles.emitParticleAt(sock.x, sock.y, 50);
         boom.anims.play('explode');             // play explode animation
+        this.particles.emitParticleAt(sock.x, sock.y, 50);
         boom.on('animationcomplete', () => {    // callback after anim completes
           sock.reset();                         // reset sock position
           sock.alpha = 1;                       // make sock visible again
