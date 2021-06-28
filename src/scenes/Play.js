@@ -52,7 +52,6 @@ class Play extends Phaser.Scene {
             speed: 200,
             lifespan: 500,
             blendMode: 'ADD',
-            maxParticles: 50,
             scale: {start: 1, end: 0},
             on: false,
         };
